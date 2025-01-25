@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三的作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">返回首页</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="portfolio-page">
+        <div class="container">
+            <h1>我的作品集</h1>
+            <div class="portfolio-categories">
+                <button class="category-btn active" data-category="all">全部</button>
+                <button class="category-btn" data-category="web">网站开发</button>
+                <button class="category-btn" data-category="app">应用设计</button>
+                <button class="category-btn" data-category="ui">UI设计</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600" alt="项目1">
+                    <div class="portfolio-info">
+                        <h3>电商平台重构</h3>
+                        <p>使用 React 重构电商平台，提升了50%的性能</p>
+                        <div class="portfolio-tags">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Redux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600" alt="项目2">
+                    <div class="portfolio-info">
+                        <h3>社交媒体 App</h3>
+                        <p>原生应用开发，实现实时通讯功能</p>
+                        <div class="portfolio-tags">
+                            <span>React Native</span>
+                            <span>Socket.io</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ui">
+                    <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&h=600" alt="项目3">
+                    <div class="portfolio-info">
+                        <h3>企业官网设计</h3>
+                        <p>响应式网站设计与开发</p>
+                        <div class="portfolio-tags">
+                            <span>Figma</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 张三的作品集</p>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

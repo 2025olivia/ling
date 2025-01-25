@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到我的个人网站</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f2f5;
+            overflow: hidden;
+        }
+
+        .entrance-container {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .entrance-container:hover {
+            transform: scale(1.1);
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .welcome-text {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .click-hint {
+            position: absolute;
+            bottom: 50px;
+            font-size: 16px;
+            color: #666;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="entrance-container">
+        <img src="https://api.dicebear.com/6.x/micah/svg?seed=happy&mood=happy&backgroundColor=b6e3f4" alt="卡通头像" class="avatar">
+        <div class="welcome-text">欢迎来到我的世界</div>
+    </div>
+    <div class="click-hint">点击头像进入个人网站</div>
+
+    <script>
+        // 修改跳转函数
+        function goToMainPage() {
+            // 直接跳转到作品集页面
+            window.location.replace('portfolio.html');
+        }
+        
+        // 确保点击整个容器都能触发跳转
+        const container = document.querySelector('.entrance-container');
+        container.addEventListener('click', goToMainPage);
+        
+        // 保持原有的动画效果代码
+        container.addEventListener('mouseover', function() {
+            document.querySelector('.avatar').style.animation = 'none';
+            setTimeout(() => {
+                document.querySelector('.avatar').style.animation = 'float 3s ease-in-out infinite';
+            }, 10);
+        });
+    </script>
+</body>
+</html>
